@@ -15,6 +15,6 @@ class RecipeControllerTest extends TestCase
     public function testMethodIndexExists()
     {
         $hasMethodIndexExists = method_exists('App\\Http\\Controllers\\RecipeController', 'index');
-        self::assertTrue($hasMethodIndexExists);
+        $this->assertTrue($hasMethodIndexExists);
     }
 }
