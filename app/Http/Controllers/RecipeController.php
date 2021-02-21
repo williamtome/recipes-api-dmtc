@@ -8,12 +8,15 @@ class RecipeController extends Controller
 {
     protected $params;
 
-    public function index(Request $request)
+    protected $ingredients;
+
+    public function index(Request $request): \Illuminate\Http\JsonResponse
     {
-        if ($request->input('i') === false) {
-            return response()->json(['data' => ['message' => 'The parameter is incorrect.']], ['status' => 400]);
+        if ($request->filled('i') == false) {
+            return response()->json("Please, add url parameter 'i' and type the ingredients.");
         }
         $this->params = $request->input('i');
-        return $this->params;
+        $this->ingredients = explode(',', $this->params);
+        return response()->json($this->ingredients);
     }
 }
