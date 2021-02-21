@@ -19,4 +19,15 @@ class RecipeController extends Controller
         $this->ingredients = explode(',', $this->params);
         return response()->json($this->ingredients);
     }
+
+    private function getFormatURL($url, $params): string
+    {
+        $customUrl = $url;
+
+        foreach ($params as $param) {
+            $customUrl .= $param . ',';
+        }
+
+        return $customUrl;
+    }
 }
