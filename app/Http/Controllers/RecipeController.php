@@ -13,7 +13,10 @@ class RecipeController extends Controller
     public function index(Request $request): \Illuminate\Http\JsonResponse
     {
         if ($request->filled('i') == false) {
-            return response()->json("Please, add url parameter 'i' and type the ingredients.");
+            return response()->json([
+                'data' => "Please, add url parameter 'i' and type the ingredients.",
+                'status' => 400
+            ]);
         }
 
         $this->params = $request->input('i');
@@ -40,12 +43,17 @@ class RecipeController extends Controller
                 curl_setopt_array($ch, $configs);
                 $results = curl_exec($ch);
                 curl_close($ch);
-                return response()->json($results);
+                return response()->json(['data' => $results, 'status' => 200]);
 
             } catch (\Exception $exception) {
                 throw $exception;
             }
         }
+
+        return response()->json([
+            'data' => 'Please enter a maximum of 3 ingredients!',
+            'status' => 406
+        ]);
     }
 
     private function getFormatURL($url, $params): string
