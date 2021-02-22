@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
-    protected $params;
-
     protected $ingredients;
 
-    public function index(Request $request): \Illuminate\Http\JsonResponse
+    protected $client;
+
+    public function __construct()
+    {
+        $this->client = new Client();
+    }
+
+    public function index(Request $request): JsonResponse
     {
         if ($request->filled('i') == false) {
             return response()->json([
@@ -19,35 +27,12 @@ class RecipeController extends Controller
             ]);
         }
 
-        $this->params = $request->input('i');
-        $this->ingredients = explode(',', $this->params);
+        $this->ingredients = explode(',', $request->input('i'));
 
         if (count($this->ingredients) > 0 && count($this->ingredients) < 4) {
-            $headers = [
-                'Accept: application/json',
-                'Content-Type: application/json'
-            ];
-
-            define('RECIPE_PUPPY_API', "http://www.recipepuppy.com/api/?i=");
-            $url = $this->getFormatURL(RECIPE_PUPPY_API, $this->ingredients);
-
-            $configs = [
-                CURLOPT_URL => $url,
-                CURLOPT_HEADER => false,
-                CURLOPT_HTTPHEADER => $headers,
-                CURLOPT_RETURNTRANSFER => true
-            ];
-
-            try {
-                $ch = curl_init();
-                curl_setopt_array($ch, $configs);
-                $results = curl_exec($ch);
-                curl_close($ch);
-                return response()->json(['data' => $results, 'status' => 200]);
-
-            } catch (\Exception $exception) {
-                throw $exception;
-            }
+            $this->ingredients = $request->input('i');
+            $results = $this->getResultsOfTheRecipeRequest();
+            return response()->json($results);
         }
 
         return response()->json([
@@ -56,14 +41,17 @@ class RecipeController extends Controller
         ]);
     }
 
-    private function getFormatURL($url, $params): string
+    private function getResultsOfTheRecipeRequest(): string
     {
-        $customUrl = $url;
+        define('RECIPE_PUPPY_API', "http://www.recipepuppy.com/api/");
 
-        foreach ($params as $param) {
-            $customUrl .= $param . ',';
+        try {
+            $response = $this->client->request('GET', RECIPE_PUPPY_API, [
+                'query' => ['i' => $this->ingredients]
+            ]);
+            return $response->getBody()->getContents();
+        } catch (GuzzleException $e) {
+            echo $e;
         }
-
-        return $customUrl;
     }
 }
