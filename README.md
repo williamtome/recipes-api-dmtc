@@ -55,3 +55,11 @@ Obs.: Para que a pesquisa seja feita com sucesso, sempre informe como parâmetro
 Rode os testes com este comando no seu terminal:
 ```
 $ ./vendor/bin/sail tests
+```
+### Licença
+
+MIT
+
+### Autor
+
+**William Weirich Tomé** - [Linkedin](https://www.linkedin.com/in/williamtome/)
