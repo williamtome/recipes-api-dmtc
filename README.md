@@ -19,7 +19,7 @@ O projeto é de uma api que traz uma lista de receitas para o cliente, de acordo
 git clone https://github.com/williamtome/recipes-api-dmtc.git
 ```
 
-2º) Execute os comando abaixo para instalar as dependências do projeto:
+2º) Execute os comando abaixo para instalar as dependências do projeto: <br>
 Obs.: É obrigatório que tenha o Composer instalado em seu ambiente de desenvolvimento.
 ```
 composer install
