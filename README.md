@@ -19,9 +19,10 @@ O projeto é de uma api que traz uma lista de receitas para o cliente, de acordo
 git clone https://github.com/williamtome/recipes-api-dmtc.git
 ```
 
-2º) Execute os comando abaixo para instalar o projeto e suas dependências:
+2º) Execute os comando abaixo para instalar as dependências do projeto:
+Obs.: É obrigatório que tenha o Composer instalado em seu ambiente de desenvolvimento.
 ```
 composer install
-npm install
-npm run dev
 ```
+
+3º) Você precisa obter uma chave da API do Giphy para que seja adicionada no arquivo *.env* da aplicação. Para isso, acesse o site do Giphy Developers (link está na sessão de **Requisitos**), clique no botão **Create an App**. Você será redirecionado para o Dashboard (antes disso, você precisará fazer um rápido cadastro no site da Giphy!) e então precisa criar o seu app para que seja gerado a api_key.
