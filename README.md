@@ -29,7 +29,7 @@ composer install
 
 ![Preview](https://github.com/williamtome/recipes-api-dmtc/blob/master/recipes-api.gif?raw=true)
 
-4º) Em seguida, adicione uma nova variável no arquivo *.env* do projeto e cole a sua chave api_key.
+4º) Em seguida, adicione uma nova variável com o nome GIPHY_API_KEY no arquivo *.env* do projeto e cole a sua chave api_key.
 
 ![Preview](https://github.com/williamtome/recipes-api-dmtc/blob/master/add-api-key-on-project.gif?raw=true)
 
