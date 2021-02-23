@@ -116,4 +116,10 @@ class RecipeController extends Controller
         }
     }
 
+    private function replaceSpaceByPlusOnRecipeTitle($string) : string
+    {
+        $recipeTitle = strtolower($string);
+        return str_replace(' ', '+', $recipeTitle);
+    }
+
 }
