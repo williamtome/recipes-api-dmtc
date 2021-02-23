@@ -26,3 +26,5 @@ composer install
 ```
 
 3º) Você precisa obter uma chave da API do Giphy para que seja adicionada no arquivo *.env* da aplicação. Para isso, acesse o site do Giphy Developers (link está na sessão de **Requisitos**), clique no botão **Create an App**. Você será redirecionado para o Dashboard (antes disso, você precisará fazer um rápido cadastro no site da Giphy!) e então precisa criar o seu app para que seja gerado a api_key.
+
+![Preview](https://github.com/williamtome/recipes-api-dmtc/blob/master/recipes-api.gif?raw=true)
