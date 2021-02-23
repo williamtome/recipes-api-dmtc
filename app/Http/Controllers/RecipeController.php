@@ -92,4 +92,19 @@ class RecipeController extends Controller
         }
     }
 
+    private function getResultsOfTheRecipeRequest(): string
+    {
+        define('RECIPE_PUPPY_API', "http://www.recipepuppy.com/api/");
+
+        try {
+            $response = $this->setRequestHttp('GET', RECIPE_PUPPY_API, [
+                'query' => ['i' => $this->ingredients]
+            ]);
+
+            return $response->getBody()->getContents();
+        } catch (GuzzleException $e) {
+            echo $e;
+        }
+    }
+
 }
