@@ -73,4 +73,23 @@ class RecipeController extends Controller
         return response()->json($recipesReturned);
     }
 
+    private function getResultsOfTheGifsRequest($recipeTitle): string
+    {
+        $apiKey = env('GIPHY_API_KEY');
+
+        try {
+            $response = $this->setRequestHttp('GET', "https://api.giphy.com/v1/gifs/search", [
+                'query' => [
+                    'api_key' => $apiKey,
+                    'q' => $recipeTitle
+                ]
+            ]);
+
+            $results = json_decode($response->getBody()->getContents());
+            return $results->data[0]->images->original->url;
+        } catch (GuzzleException $e) {
+            return response()->json(['data' => 'Error on request data of the Giphy API.', 'status' => 500]);
+        }
+    }
+
 }
