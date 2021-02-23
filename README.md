@@ -14,7 +14,7 @@ O projeto é de uma api que traz uma lista de receitas para o cliente, de acordo
 * Giphy Developers - Recurso usado para encontrar gifs. [Site](https://developers.giphy.com/docs/api#quick-start-guide)
 ### Uso
 
-1º) Faça o clone do projeto 
+1º) Faça o clone do projeto no terminal:
 ```
 git clone https://github.com/williamtome/recipes-api-dmtc.git
 ```
@@ -33,7 +33,7 @@ composer install
 
 ![Preview](https://github.com/williamtome/recipes-api-dmtc/blob/master/add-api-key-on-project.gif?raw=true)
 
-5º) Por padrão, já vem adicionado ao Laravel o Laravel Sail, que nada mais é do que um setup pré-configurado da aplicação usando Docker. Para rodar a aplicação localmente, precisa ter o Docker instalado na sua máquina. Se for Windows ou Mac, instale o [Docker Desktop](https://www.docker.com/products/docker-desktop) ou se for Linux, instale com este comando:
+5º) Por padrão, já vem adicionado ao Laravel o Laravel Sail, que nada mais é do que um setup pré-configurado da aplicação usando Docker. Para rodar a aplicação localmente, precisa ter o Docker instalado na sua máquina. Se for Windows ou Mac, instale o [Docker Desktop](https://www.docker.com/products/docker-desktop) ou se for Linux, instale com este comando em seu terminal:
 ```
 $ curl -fsSL https://get.docker.com | bash
 ```
@@ -45,5 +45,6 @@ $ ./vendor/bin/sail up -d
 
 ### Testes
 
+Rode os testes com este comando no seu terminal:
 ```
-./vendor/bin/sail tests
+$ ./vendor/bin/sail tests
