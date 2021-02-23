@@ -39,8 +39,8 @@ $ curl -fsSL https://get.docker.com | bash
 ```
 Após instalado e ativado o Docker, entre na pasta do projeto e execute:
 ```
-cd recipes-api-dmtc
-./vendor/bin/sail up -d
+$ cd recipes-api-dmtc
+$ ./vendor/bin/sail up -d
 ```
 
 ### Testes
