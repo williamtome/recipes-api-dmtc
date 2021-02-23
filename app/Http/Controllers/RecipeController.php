@@ -122,4 +122,9 @@ class RecipeController extends Controller
         return str_replace(' ', '+', $recipeTitle);
     }
 
+    private function convertStringToArray($string): array
+    {
+        return explode(', ', $string);
+    }
+
 }
