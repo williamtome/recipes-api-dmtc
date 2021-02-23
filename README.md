@@ -15,6 +15,13 @@ O projeto é de uma api que traz uma lista de receitas para o cliente, de acordo
 ### Uso
 
 1º) Faça o clone do projeto 
-´´´
+```
 git clone https://github.com/williamtome/recipes-api-dmtc.git
-´´´
+```
+
+2º) Execute os comando abaixo para instalar o projeto e suas dependências:
+```
+composer install
+npm install
+npm run dev
+```
