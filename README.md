@@ -33,6 +33,16 @@ composer install
 
 ![Preview](https://github.com/williamtome/recipes-api-dmtc/blob/master/add-api-key-on-project.gif?raw=true)
 
+5º) Por padrão, já vem adicionado ao Laravel o Laravel Sail, que nada mais é do que um setup pré-configurado da aplicação usando Docker. Para rodar a aplicação localmente, precisa ter o Docker instalado na sua máquina. Se for Windows ou Mac, instale o [Docker Desktop](https://www.docker.com/products/docker-desktop) ou se for Linux, instale com este comando:
+```
+$ curl -fsSL https://get.docker.com | bash
+```
+Após instalado e ativado o Docker, entre na pasta do projeto e execute:
+```
+cd recipes-api-dmtc
+./vendor/bin/sail up -d
+```
+
 ### Testes
 
 ```
