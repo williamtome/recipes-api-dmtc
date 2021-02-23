@@ -13,6 +13,7 @@ O projeto é de uma api que traz uma lista de receitas para o cliente, de acordo
 * Insomnia - [Site](https://insomnia.rest/download/)
 * RecipePuppy - Encontre receitas pelos ingredientes e palavras-chaves. [Site](http://www.recipepuppy.com/about/api/)
 * Giphy Developers - Recurso usado para encontrar gifs. [Site](https://developers.giphy.com/docs/api#quick-start-guide)
+
 ### Uso
 
 1º) Faça o clone do projeto no terminal:
@@ -44,7 +45,7 @@ $ cd recipes-api-dmtc
 $ ./vendor/bin/sail up -d
 ```
 
-6º) Para realizar a pesquisa de receitas, abra o Insomnia ou o [Postman](https://www.postman.com/) e informe na url 
+6º) Para realizar a pesquisa de receitas, abra o Insomnia ou o [Postman](https://www.postman.com/) e informe na url: 
 ```
 http://localhost:80/recipes/?i={ingrediente_1},{ingrediente_2}
 ```
@@ -62,4 +63,7 @@ MIT
 
 ### Autor
 
-**William Weirich Tomé** - [Linkedin](https://www.linkedin.com/in/williamtome/)
+**William Weirich Tomé** 
+<a href="https://www.linkedin.com/in/williamtome/">
+    <img src="https://camo.githubusercontent.com/28bbd2596707954793abeff9eb24d343c1c78b7bf184b90294b4b190c6097a65/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f6e706d2f73696d706c652d69636f6e7340332e302e312f69636f6e732f6c696e6b6564696e2e737667" alt="linkedin" height="40" data-canonical-src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" style="max-width:100%;"/>
+</a> 
