@@ -32,7 +32,7 @@ class RecipeController extends Controller
         if (count($this->ingredients) > 0 && count($this->ingredients) < 4) {
             $this->ingredients = $request->input('i');
             $results = $this->getResultsOfTheRecipeRequest();
-            return response()->json($results);
+            return $this->resultHandler($results);
         }
 
         return response()->json([
@@ -41,17 +41,36 @@ class RecipeController extends Controller
         ]);
     }
 
-    private function getResultsOfTheRecipeRequest(): string
+    private function resultHandler($results): JsonResponse
     {
-        define('RECIPE_PUPPY_API', "http://www.recipepuppy.com/api/");
+        $data = json_decode($results);
+        $results = response()->json($data->results);
 
-        try {
-            $response = $this->client->request('GET', RECIPE_PUPPY_API, [
-                'query' => ['i' => $this->ingredients]
-            ]);
-            return $response->getBody()->getContents();
-        } catch (GuzzleException $e) {
-            echo $e;
+        $recipesReturned = [
+            'keywords' => explode(',', $this->ingredients),
+            'recipes' => []
+        ];
+
+        foreach ($results->getData() as $result) {
+            $recipeTitle = $this->replaceSpaceByPlusOnRecipeTitle($result->title);
+
+            $this->ingredients = $this->convertStringToArray($result->ingredients);
+
+            sort($this->ingredients);
+
+            $urlGif = $this->getResultsOfTheGifsRequest($recipeTitle);
+
+            $recipe = [
+                'title' => $result->title,
+                'ingredients' => $this->ingredients,
+                'link' => $result->href,
+                'gif' => $urlGif
+            ];
+
+            array_push($recipesReturned['recipes'], $recipe);
         }
+
+        return response()->json($recipesReturned);
     }
+
 }
