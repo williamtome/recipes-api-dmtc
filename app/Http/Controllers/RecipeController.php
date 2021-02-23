@@ -107,4 +107,13 @@ class RecipeController extends Controller
         }
     }
 
+    private function setRequestHttp(string $method, string $url, array $query = []): \Psr\Http\Message\ResponseInterface
+    {
+        try {
+            return $this->client->request($method, $url, $query);
+        } catch (GuzzleException $e) {
+            throw $e;
+        }
+    }
+
 }
