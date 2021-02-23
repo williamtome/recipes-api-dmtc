@@ -10,6 +10,7 @@ O projeto é de uma api que traz uma lista de receitas para o cliente, de acordo
 * Laravel 8.28 - [Documentação](https://laravel.com/docs/8.x)
 * Laravel Sail - [Documentação](https://laravel.com/docs/8.x/sail)
 * Composer 2 - [Documentação](https://getcomposer.org/doc/)
+* Insomnia - [Site](https://insomnia.rest/download/)
 * RecipePuppy - Encontre receitas pelos ingredientes e palavras-chaves. [Site](http://www.recipepuppy.com/about/api/)
 * Giphy Developers - Recurso usado para encontrar gifs. [Site](https://developers.giphy.com/docs/api#quick-start-guide)
 ### Uso
@@ -42,6 +43,12 @@ Após instalado e ativado o Docker, entre na pasta do projeto e execute:
 $ cd recipes-api-dmtc
 $ ./vendor/bin/sail up -d
 ```
+
+6º) Para realizar a pesquisa de receitas, abra o Insomnia ou o [Postman](https://www.postman.com/) e informe na url 
+```
+http://localhost:80/recipes/?i={ingrediente_1},{ingrediente_2}
+```
+Obs.: Para que a pesquisa seja feita com sucesso, sempre informe como parâmetro a letra "i"; depois digite o nome dos ingredientes em inglês e se adicionar mais de um ingrediente, coloque uma vírgula (',') depois.
 
 ### Testes
 
