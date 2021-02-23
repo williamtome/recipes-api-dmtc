@@ -16,5 +16,5 @@ O projeto é de uma api que traz uma lista de receitas para o cliente, de acordo
 
 1º) Faça o clone do projeto 
 ´´´
-$ git clone https://github.com/williamtome/recipes-api-dmtc.git
+git clone https://github.com/williamtome/recipes-api-dmtc.git
 ´´´
