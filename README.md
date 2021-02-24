@@ -55,7 +55,7 @@ Obs.: Para que a pesquisa seja feita com sucesso, sempre informe como parâmetro
 
 Rode os testes com este comando no seu terminal:
 ```
-$ ./vendor/bin/sail tests
+$ ./vendor/bin/sail test
 ```
 ### Licença
 
