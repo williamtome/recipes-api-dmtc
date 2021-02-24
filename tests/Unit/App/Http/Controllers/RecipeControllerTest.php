@@ -17,4 +17,11 @@ class RecipeControllerTest extends TestCase
         $hasMethodIndexExists = method_exists('App\\Http\\Controllers\\RecipeController', 'index');
         $this->assertTrue($hasMethodIndexExists);
     }
+
+    public function testConvertStringToArray()
+    {
+        $string = 'tomato, cheese, onions';
+        $array = explode(', ', $string);
+        $this->assertIsArray($array);
+    }
 }
