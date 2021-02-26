@@ -24,4 +24,11 @@ class RecipeControllerTest extends TestCase
         $array = explode(', ', $string);
         $this->assertIsArray($array);
     }
+
+    public function testReplaceSpaceByPlusOnRecipeTitle()
+    {
+        $recipeTitle = 'Spicy Bloody Mary Ham Steaks Recipe';
+        $recipeTitle = strtolower(str_replace(' ', '+', $recipeTitle));
+        $this->assertEquals('spicy+bloody+mary+ham+steaks+recipe', $recipeTitle);
+    }
 }
