@@ -6,7 +6,7 @@ O projeto é de uma api que traz uma lista de receitas para o cliente, de acordo
 
 ### Requisitos
 
-* PHP 7.4 - [Documentação](https://www.php.net/downloads.php)
+* PHP 8.0.2 - [Documentação](https://www.php.net/downloads.php)
 * Laravel 8.28 - [Documentação](https://laravel.com/docs/8.x)
 * Laravel Sail - [Documentação](https://laravel.com/docs/8.x/sail)
 * Composer 2 - [Documentação](https://getcomposer.org/doc/)
