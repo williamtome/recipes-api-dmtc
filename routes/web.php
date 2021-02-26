@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (\Illuminate\Http\Request $request) {
-//    return view('welcome');
-    return $request->input('i');
+    return view('welcome');
 });
