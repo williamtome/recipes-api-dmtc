@@ -22,7 +22,7 @@ class RecipeController extends Controller
     {
         if ($request->filled('i') == false) {
             return response()->json([
-                'data' => "Please, add url parameter 'i' and type the ingredients.",
+                'message' => "Por favor, informe no mínimo 1 ingrediente.",
                 'status' => 400
             ]);
         }
@@ -36,7 +36,7 @@ class RecipeController extends Controller
         }
 
         return response()->json([
-            'data' => 'Please enter a maximum of 3 ingredients!',
+            'message' => 'Por favor, digite no máximo 3 ingredientes!',
             'status' => 406
         ]);
     }
