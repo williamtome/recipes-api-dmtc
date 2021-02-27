@@ -45,9 +45,9 @@ $ cd recipes-api-dmtc
 $ ./vendor/bin/sail up -d
 ```
 
-6º) Para realizar a pesquisa de receitas, abra o Insomnia ou o [Postman](https://www.postman.com/) e informe na url: 
+6º) Acesse a aplicação, digitando na url do seu navegador favorito: 
 ```
-http://localhost:80/api/recipes/?i={ingrediente_1},{ingrediente_2}
+http://localhost/
 ```
 Obs.: Para que a pesquisa seja feita com sucesso, sempre informe como parâmetro a letra "i"; depois digite o nome dos ingredientes em inglês e se adicionar mais de um ingrediente, coloque uma vírgula (',') depois.
 
